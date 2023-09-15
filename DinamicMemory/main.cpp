@@ -1,8 +1,8 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <cstdlib>
 #include <ctime>
 
-// заполнение массива случайными числами
+// Р·Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° СЃР»СѓС‡Р°Р№РЅС‹РјРё С‡РёСЃР»Р°РјРё
 template <typename T>
 void fill_arr(T arr[], const int length, int left, int right) {
 	srand(time(NULL));
@@ -10,7 +10,7 @@ void fill_arr(T arr[], const int length, int left, int right) {
 		arr[i] = rand() % (right - left) + left;
 }
 
-// вывод массива в консоль
+// РІС‹РІРѕРґ РјР°СЃСЃРёРІР° РІ РєРѕРЅСЃРѕР»СЊ
 template <typename T>
 void print_arr(const T arr[], const int length) {
 	std::cout << "{ ";
@@ -19,7 +19,7 @@ void print_arr(const T arr[], const int length) {
 	std::cout << "\b\b }\n";
 }
 
-// добавление num элементов к динамическому массиву
+// РґРѕР±Р°РІР»РµРЅРёРµ num СЌР»РµРјРµРЅС‚РѕРІ Рє РґРёРЅР°РјРёС‡РµСЃРєРѕРјСѓ РјР°СЃСЃРёРІСѓ
 template <typename T>
 void arr_add(T*& arr, int& length, int num) {
 	if (num <= 0)
@@ -39,13 +39,13 @@ int main() {
 	int n;
 
 
-	// динамическая память
+	// РґРёРЅР°РјРёС‡РµСЃРєР°СЏ РїР°РјСЏС‚СЊ
 
 	//int* pointer = new int;
 	//*pointer = 7;
 	//std::cout << "pointer = " << pointer << std::endl;
 	//std::cout << "*pointer = " << *pointer << std::endl;
-	//delete pointer; // освобождение области памяти, на которую направлен указатель
+	//delete pointer; // РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РѕР±Р»Р°СЃС‚Рё РїР°РјСЏС‚Рё, РЅР° РєРѕС‚РѕСЂСѓСЋ РЅР°РїСЂР°РІР»РµРЅ СѓРєР°Р·Р°С‚РµР»СЊ
 	//pointer = nullptr;
 	//if (pointer == nullptr) {
 	//	pointer = new int;
@@ -57,9 +57,9 @@ int main() {
 	//delete pointer;
 
 
-	// динамические одномерные массивы
+	// РґРёРЅР°РјРёС‡РµСЃРєРёРµ РѕРґРЅРѕРјРµСЂРЅС‹Рµ РјР°СЃСЃРёРІС‹
 
-	/*std::cout << "Введите размер массива -> ";
+	/*std::cout << "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР° -> ";
 	int dsize;
 	std::cin >> dsize;
 
@@ -75,37 +75,37 @@ int main() {
 	
 	delete[] darr;*/
 
-	// динамические двумерные массивы
+	// РґРёРЅР°РјРёС‡РµСЃРєРёРµ РґРІСѓРјРµСЂРЅС‹Рµ РјР°СЃСЃРёРІС‹
 
 	//int rows = 5, cols = 5;
-	//// выделение памяти
-	//// int* dmx = new int[rows][cols];  // ОШИБКА!!!!
+	//// РІС‹РґРµР»РµРЅРёРµ РїР°РјСЏС‚Рё
+	//// int* dmx = new int[rows][cols];  // РћРЁРР‘РљРђ!!!!
 	//int** dmx = new int*[rows];
 	//for (int i = 0; i < rows; i++)
 	//	dmx[i] = new int[cols];
-	//// освобождение памяти
+	//// РѕСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё
 	//for (int i = 0; i < rows; i++)
 	//	delete[] dmx[i];
 	//delete[] dmx;
 
-	// Задача 1. Увеличение размера массива
+	// Р—Р°РґР°С‡Р° 1. РЈРІРµР»РёС‡РµРЅРёРµ СЂР°Р·РјРµСЂР° РјР°СЃСЃРёРІР°
 
-	std::cout << "Задача 1.\nВведите размер массива -> ";
+	std::cout << "Р—Р°РґР°С‡Р° 1.\nР’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР° -> ";
 	int size1;
 	std::cin >> size1;
 
 	int* arr1 = new int[size1];
 
 	fill_arr(arr1, size1, 1, 11);
-	std::cout << "Изначальный массив:\n";
+	std::cout << "РР·РЅР°С‡Р°Р»СЊРЅС‹Р№ РјР°СЃСЃРёРІ:\n";
 	print_arr(arr1, size1);
 
-	std::cout << "Введите количество новых элементов -> ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ РЅРѕРІС‹С… СЌР»РµРјРµРЅС‚РѕРІ -> ";
 	std::cin >> n;
 
 	arr_add(arr1, size1, n);
 
-	std::cout << "Итоговый массив:\n";
+	std::cout << "РС‚РѕРіРѕРІС‹Р№ РјР°СЃСЃРёРІ:\n";
 	print_arr(arr1, size1);
 	std::cout << std::endl;
 
